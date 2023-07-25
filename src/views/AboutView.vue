@@ -1,6 +1,19 @@
+<script setup>
+import {ref} from "vue";
+import authService from "../services/auth.service";
+
+const perfil = ref(null)
+
+async function funPerfil (){
+  const { data } = await authService.getPerfil();
+  perfil.value = data
+}
+funPerfil()
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>{{ perfil }}</h1>
   </div>
 </template>
 
