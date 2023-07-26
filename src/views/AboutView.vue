@@ -12,8 +12,9 @@ funPerfil()
 </script>
 
 <template>
-  <div class="about">
-    <h1>{{ perfil }}</h1>
+  <div class="card" v-if="perfil">
+    <h1>Correo: {{ perfil.email }}</h1>
+    <h1>Nombre: {{ perfil.name }}</h1>
   </div>
 </template>
 
