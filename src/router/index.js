@@ -2,6 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import VistaLogin from  '../views/LoginView.vue'
 import AppLayout from '@/layout/AppLayout.vue';
+import Categoria from '@/views/admin/Categoria.vue';
+import Producto from '@/views/admin/Producto.vue';
+import NuevoPedido from '@/views/admin/pedido/NuevoPedido.vue';
+import ListaPedido from '@/views/admin/pedido/ListaPedido.vue';
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,6 +37,30 @@ const router = createRouter({
           component: () => import('../views/AboutView.vue'),
           meta: {requireAuth: true}
         },
+        {
+          path: 'categoria',
+          name: 'Categoria',
+          component: Categoria,
+          meta: {requireAuth: true}
+        },
+        {
+          path: 'producto',
+          name: 'Producto',
+          component: Producto,
+          meta: {requireAuth: true}
+        },
+        {
+          path: 'pedido/nuevo',
+          name: 'NuevosPedidos',
+          component: NuevoPedido,
+          meta: {requireAuth: true}
+        },
+        {
+          path: 'pedido',
+          name: 'ListaPedidos',
+          component: ListaPedido,
+          meta: {requireAuth: true}
+        }
       ]
 
     }
